@@ -1,0 +1,85 @@
+:root {
+  --sun: #FCE570;
+  --sky: #7EC0EE;
+  --grass: #5E9D34;
+  --dirt: #9B7653;
+  --stone: #B8B09B;
+  --bedrock: #1f1f1f;
+} @font-face {
+  font-family: mc-fancy;
+  src: url(assets/MinecraftEvenings.ttf);
+} @font-face {
+  font-family: mc-dull;
+  src: url(assets/MinecraftBold.otf);
+} html, body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+} html {
+  font-family: mc-fancy;
+  background: black;
+} body {
+  display: flex;
+} .content {
+  margin: auto;
+  max-width: min-content;
+  max-height: min-content; 
+} .gradient {
+  /* color it like minecraft */
+  background: var(--sky);
+  background: linear-gradient(to bottom, 
+    var(--sun) 0%,
+    white 4%, 
+    var(--sky) 26%, 
+    var(--sky) 36%, 
+    var(--grass) 50%, 
+    var(--dirt) 52%, 
+    var(--dirt) 60%, 
+    var(--stone) 76%,
+    var(--bedrock) 96%,
+    black 98%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+} h1 {
+  padding: 5px;
+} h1, li, a {
+  min-width: max-content;
+  text-decoration: none;
+} a:hover, .dirt {
+  -webkit-text-fill-color: var(--dirt);
+} a:active {
+  -webkit-text-fill-color: var(--grass);
+} .ip:hover {
+  cursor: pointer;
+  -webkit-text-fill-color: rgba(255,255,255,0.5);
+} .no-select {
+  user-select: none;
+} .hidden {
+  display: none;
+} .notification {
+  background: var(--dirt);
+  position: absolute;
+  font-family: mc-dull;
+  padding: 0 .25rem 0 1rem;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, .5rem 100%);
+  -webkit-text-fill-color: var(--grass);
+  text-shadow: -1px 1px 1px black;
+} .frame {
+  position: absolute;
+  opacity: .5;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  word-break: break-all;
+  width: 100%;
+  height: 100%;
+  font-family: mc-dull;
+  font-size: 5rem;
+  line-height: 2rem;
+  letter-spacing: -1rem;
+  overflow: hidden;
+  text-align: right;
+} .art {
+  margin: -3rem;
+}
+
