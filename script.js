@@ -1,25 +1,30 @@
 const words = ["dank", "piss", "art"]
-const delay = 0
+const artDelay = 1
+const scrollSpeed = 0.1
+const scrollDelay = 1
 
 window.onload = () => {
   const artElem = document.querySelector(".art")
   const frameElem = document.querySelector(".frame")
-  const done = () => { 
-    return artElem.offsetHeight > frameElem.offsetHeight + 100;
-  }
+  const bannerTextElem = document.querySelector(".banner-text") 
+
   // piss dank art
-  addWords(artElem, words, delay, done)
+  const piss = () => addWords(artElem, words, artDelay, () => 
+    artElem.offsetHeight > frameElem.offsetHeight + 100)
+  piss()
+
+  // scroll banner
+  scrollBanner(bannerTextElem, scrollSpeed, scrollDelay)
 
   // piss on resize
   let requests = 0
   window.onresize = () => {
-    console.log("resizing the window")
-    // request art drawing
+    // rerequest art drawing
     requests += 1
     setTimeout(() => {
       requests -= 1
       if (requests == 0) {
-        addWords(artElem, words, delay, done)
+        piss()
       }
     }, 40)
   }
@@ -44,6 +49,19 @@ const copyIP = (ev) => {
       alertElem.classList.add("hidden")
     }
   }, 1000)
+}
+
+//
+// SCROLL BANNER
+
+let indent = 0
+const scrollBanner = (elem, speed=.1, delay=100) => {
+  indent += speed
+  if (indent > elem.offsetWidth / 2) {
+    indent = 0
+  }
+  elem.style.left = `-${indent}px`
+  setTimeout(() => scrollBanner(elem, speed, delay), delay)
 }
 
 //

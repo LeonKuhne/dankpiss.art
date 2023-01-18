@@ -19,11 +19,15 @@
   font-family: mc-fancy;
   background: black;
 } body {
+  margin-top: -50px;
   display: flex;
 } .content {
   margin: auto;
   max-width: min-content;
   max-height: min-content; 
+  padding-top: 100px;
+  padding-bottom: 50px;
+  overflow: hidden;
 } .gradient {
   /* color it like minecraft */
   background: var(--sky);
@@ -40,8 +44,9 @@
     black 98%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-} h1 {
+} .connect {
   padding: 5px;
+  padding-bottom: 12px;
 } h1, li, a {
   min-width: max-content;
   text-decoration: none;
@@ -52,6 +57,9 @@
 } .ip:hover {
   cursor: pointer;
   -webkit-text-fill-color: rgba(255,255,255,0.5);
+} .ip:active {
+  cursor: grabbing;
+  -webkit-text-fill-color: white;
 } .no-select {
   user-select: none;
 } .hidden {
@@ -81,5 +89,14 @@
   text-align: right;
 } .art {
   margin: -3rem;
+} footer {
+  font-family: mc-dull;
+} .banner {
+  width: 0;
+} .banner-text {
+  width: max-content;
+  position: relative;
+  padding-bottom: 12px;
+} h3 {
+  margin-bottom: 0px;
 }
-
