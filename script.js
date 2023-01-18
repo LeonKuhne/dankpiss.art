@@ -60,7 +60,7 @@ const scrollBanner = (elem, speed=.1, delay=100) => {
   if (indent > elem.offsetWidth / 2) {
     indent = 0
   }
-  elem.style.left = `-${indent}px`
+  elem.style.textIndent = `-${indent}px`
   setTimeout(() => scrollBanner(elem, speed, delay), delay)
 }
 
